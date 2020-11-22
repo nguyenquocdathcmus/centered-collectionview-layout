@@ -11,6 +11,7 @@ Just initialize the `UICollectionViewCenterLayout` object and set it as the `col
 
 ```swift
 let layout = UICollectionViewCenterLayout()
+layout.contentStyle = .left
 layout.estimatedItemSize = CGSize(width: 140, height: 40)
 collectionView.collectionViewLayout = layout
 ```

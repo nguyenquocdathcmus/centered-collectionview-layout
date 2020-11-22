@@ -10,4 +10,15 @@ import UIKit
 
 class RoundedCollectionViewCell: UICollectionViewCell {
     @IBOutlet var textLabel: UILabel!
+    
+    var stateCell : Bool? {
+        didSet {
+            if stateCell ?? false {
+                textLabel.textColor = .yellow
+            } else {
+                textLabel.textColor = .black
+            }
+        }
+    }
 }
+

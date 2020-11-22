@@ -24,7 +24,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         let layout = UICollectionViewCenterLayout()
+        layout.contentStyle = .left
         layout.estimatedItemSize = CGSize(width: 140, height: 40)
+        
         collectionView.collectionViewLayout = layout
     }
 
@@ -42,5 +44,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.textLabel.text = titles[indexPath.row]
         return cell
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if  let cell = collectionView.cellForItem(at: indexPath) as? RoundedCollectionViewCell {
+            cell.stateCell = !(cell.stateCell ?? false)
+        }
+    }
+    
+    
 }
 
